@@ -73,16 +73,4 @@ data = {
     ]
 }
 
-# Create Bar Chart
-fig, ax = plt.subplots(figsize=(8, 4))
-bars = ax.bar(data["Metric"], data["Input Value"], color=['blue', 'green', 'purple'])
-ax.set_ylabel("Input Values")
-ax.set_title("Fitness Input Comparison")
 
-# Annotate the bars
-for bar in bars:
-    height = bar.get_height()
-    ax.text(bar.get_x() + bar.get_width()/2.0, height, f'{height}', ha='center', va='bottom')
-
-# Show Visualization in Streamlit
-st.pyplot(fig)
