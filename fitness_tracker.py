@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 st.title("Fitness Tracker")
 
 # Input Section Heading
-st.markdown("### **Inputs (in Metric Form)**")
+st.markdown("### **Inputs**")
 
 # Input Data Columns
 col1, col2 = st.columns(2)
