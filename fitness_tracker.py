@@ -39,31 +39,31 @@ def calculate_fitness(steps, sun, water):
     # Check each metric and add specific feedback
     if not (12000 <= steps <= 15000):
         if steps < 2000:
-            issues.append("Daily Steps: Need to walk much more")
+            issues.append("Daily Steps ~ Extremely low")
         elif steps < 5000:
-            issues.append("Daily Steps: Need to walk more")
+            issues.append("Daily Steps ~ Need to walk more")
         elif steps < 7000:
-            issues.append("Daily Steps: Below average")
+            issues.append("Daily Steps ~ Below average")
         elif steps < 12000:
-            issues.append("Daily Steps: Good, but aim for higher")
+            issues.append("Daily Steps ~ Good , But aim for higher")
 
     if not (25 <= sun <= 30):
         if sun < 5:
-            issues.append("Sun Exposure : Too low")
+            issues.append("Sun Exposure ~ Too low")
         elif sun < 15:
-            issues.append("Sun Exposure : Average, aim for more")
+            issues.append("Sun Exposure ~ Average")
         elif sun < 25:
-            issues.append("Sun Exposure : Good, but aim for higher")
+            issues.append("Sun Exposure ~ Good , But aim for higher")
     
     if water < 5:
         if water < 2:
-            issues.append("Water Intake: Critically low")
+            issues.append("Water Intake ~ Critically low")
         elif water < 3:
-            issues.append("Water Intake: Below average")
+            issues.append("Water Intake ~ Below average")
         elif water < 4:
-            issues.append("Water Intake: Average, aim for higher")
+            issues.append("Water Intake ~ Average")
         elif water < 5:
-            issues.append("Water Intake: Good, but aim for higher")
+            issues.append("Water Intake ~ Good , But aim for higher")
     
     # If no issues, assign Excellent, Good, Average, or Needs Improvement
     if not issues:
@@ -79,10 +79,20 @@ def calculate_fitness(steps, sun, water):
     # Combine all issues and return feedback
     return "Need to Improve\n" + "\n".join(issues)
 
-
-
 # Calculate Result
 fitness_result = calculate_fitness(daily_steps, sun_exposure, water_intake)
+
+# Display the feedback properly formatted
+if "Need to Improve" in fitness_result:
+    result_lines = fitness_result.split("\n")
+    main_result = result_lines[0]  # Extract main result (e.g., "Need to Improve")
+    details = "\n".join(result_lines[1:])  # Extract detailed feedback
+    st.markdown(f"## Fitness Level: {main_result}")  # Display main result
+    st.markdown("### Feedback:")
+    for detail in details.split("\n"):  # Iterate over individual feedback lines
+        st.markdown(f"- {detail}")
+else:
+    st.markdown(f"## Fitness Level: {fitness_result}")
 
 # Display Result
 st.markdown(f"## Fitness Level: **{fitness_result}**")
