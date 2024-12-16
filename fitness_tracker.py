@@ -88,11 +88,11 @@ if "Need to Improve" in fitness_result:
     main_result = result_lines[0]  # Extract main result (e.g., "Need to Improve")
     details = "\n".join(result_lines[1:])  # Extract detailed feedback
     st.markdown(f"## Fitness Level: {main_result}")  # Display main result
-    st.markdown("### Feedback:")
+    st.markdown("### Feedback :")
     for detail in details.split("\n"):  # Iterate over individual feedback lines
         st.markdown(f"- {detail}")
 else:
-    st.markdown(f"## Fitness Level: {fitness_result}")
+    st.markdown(f"## Fitness Level : {fitness_result}")
 
 
 
