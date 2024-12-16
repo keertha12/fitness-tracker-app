@@ -39,31 +39,31 @@ def calculate_fitness(steps, sun, water):
     # Check each metric and add specific feedback
     if not (12000 <= steps <= 15000):
         if steps < 2000:
-            issues.append("Daily Steps: Extremely low")
+            issues.append("Daily Steps: Need to walk much more")
         elif steps < 5000:
-            issues.append("Daily Steps: Need to walk more (under 5000)")
+            issues.append("Daily Steps: Need to walk more")
         elif steps < 7000:
-            issues.append("Daily Steps: Below average (5000-6999)")
+            issues.append("Daily Steps: Below average")
         elif steps < 12000:
-            issues.append("Daily Steps: Good, but aim for 12,000 or more")
+            issues.append("Daily Steps: Good, but aim for higher")
 
     if not (25 <= sun <= 30):
         if sun < 5:
-            issues.append("Sun Exposure: Too low (less than 5 mins)")
+            issues.append("Sun Exposure : Too low")
         elif sun < 15:
-            issues.append("Sun Exposure: Average, aim for at least 15 mins")
+            issues.append("Sun Exposure : Average, aim for more")
         elif sun < 25:
-            issues.append("Sun Exposure: Good, but aim for 25-30 mins")
+            issues.append("Sun Exposure : Good, but aim for higher")
     
     if water < 5:
         if water < 2:
-            issues.append("Water Intake: Critically low (under 2L)")
+            issues.append("Water Intake: Critically low")
         elif water < 3:
-            issues.append("Water Intake: Below average (2-3L)")
+            issues.append("Water Intake: Below average")
         elif water < 4:
-            issues.append("Water Intake: Average, aim for 4L or more")
+            issues.append("Water Intake: Average, aim for higher")
         elif water < 5:
-            issues.append("Water Intake: Good, but aim for 5L or more")
+            issues.append("Water Intake: Good, but aim for higher")
     
     # If no issues, assign Excellent, Good, Average, or Needs Improvement
     if not issues:
@@ -77,7 +77,8 @@ def calculate_fitness(steps, sun, water):
             return "Need to Improve"
     
     # Combine all issues and return feedback
-    return "Need to Improve:\n" + "\n".join(issues)
+    return "Need to Improve\n" + "\n".join(issues)
+
 
 
 # Calculate Result
