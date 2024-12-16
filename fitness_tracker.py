@@ -61,16 +61,4 @@ fitness_result = calculate_fitness(daily_steps, sun_exposure, water_intake)
 # Display Result
 st.markdown(f"## Fitness Level: **{fitness_result}**")
 
-# Data Visualization
-st.markdown("### **Fitness Level Visualization**")
-data = {
-    "Metric": ["Daily Steps", "Sun Exposure", "Water Intake"],
-    "Input Value": [daily_steps, sun_exposure, water_intake],
-    "Ideal Range": [
-        "12,000-15,000",
-        "25-30 mins",
-        ">= 5 Liters"
-    ]
-}
-
 
