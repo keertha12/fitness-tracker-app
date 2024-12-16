@@ -94,7 +94,5 @@ if "Need to Improve" in fitness_result:
 else:
     st.markdown(f"## Fitness Level: {fitness_result}")
 
-# Display Result
-st.markdown(f"## Fitness Level: **{fitness_result}**")
 
 
