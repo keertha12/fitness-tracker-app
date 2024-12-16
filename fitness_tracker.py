@@ -45,7 +45,7 @@ def calculate_fitness(steps, sun, water):
         elif steps < 7000:
             issues.append("Daily Steps ~ Below average")
         elif steps < 12000:
-            issues.append("Daily Steps ~ Good , But get more steps")
+            issues.append("Daily Steps ~ Good , but get more steps")
 
     if not (25 <= sun <= 30):
         if sun < 5:
@@ -53,7 +53,7 @@ def calculate_fitness(steps, sun, water):
         elif sun < 15:
             issues.append("Sun Exposure ~ Average")
         elif sun < 25:
-            issues.append("Sun Exposure ~ Good , But aim for higher")
+            issues.append("Sun Exposure ~ Good , but aim for higher")
     
     if water < 5:
         if water < 2:
